@@ -1,0 +1,16 @@
+name: Your workflow name
+
+on:
+  push:
+    branches: [ main ]  # Triggers on pushes to the main branch
+  pull_request:  # Optional: Triggers on pull requests
+
+jobs:
+  build:  # Job name
+    runs-on: ubuntu-latest  # Runner operating system
+    steps:
+      - uses: actions/checkout@v3  # Checks out your code from GitHub
+      - name: Install dependencies  # Replace with your specific commands
+        run: npm install
+      - name: Run tests
+        run: npm test
